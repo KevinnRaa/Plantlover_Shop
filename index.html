@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" class=""> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantLover Shop - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-primary text-primary">
+
+    <header class="shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 lg:px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-theme-accent flex items-center">
+                        <i class="fas fa-leaf mr-2"></i>
+                        <span data-en="PlantLover" data-kh="អ្នកស្រលាញ់រុក្ខជាតិ">PlantLover</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-1" id="desktop-nav-links">
+                    <a href="#" class="nav-link active px-3 py-2 rounded-md text-sm font-medium relative" data-en="Home" data-kh="ទំព័រដើម">Home</a>
+                    <a href="#categories" class="nav-link px-3 py-2 rounded-md text-sm font-medium relative" data-en="Categories" data-kh="ប្រភេទ">Categories</a>
+                    <a href="#shop" class="nav-link px-3 py-2 rounded-md text-sm font-medium relative" data-en="Shop" data-kh="ហាង">Shop</a>
+                    <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium relative" data-en="About" data-kh="អំពីយើង">About</a>
+                    <a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium relative" data-en="Contact" data-kh="ទំនាក់ទំនង">Contact</a>
+                    <a href="#cart-modal" id="cart-icon-desktop" class="nav-link relative px-3 py-2 rounded-md text-sm font-medium">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count-desktop" class="cart-badge hidden">0</span>
+                        <span data-en="Cart" data-kh="កន្ត្រក">Cart</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button id="theme-toggle" class="theme-toggle-btn p-2 rounded-md focus:outline-none focus:ring-2">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="lang-toggle" class="lang-toggle-btn text-sm font-medium p-2 rounded-md focus:outline-none focus:ring-2">
+                        <span data-en="KH" data-kh="EN">KH</span>
+                    </button>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="text-theme-accent hover:text-theme-accent-hover focus:outline-none p-2 rounded-md">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden mt-2">
+                <a href="#" class="mobile-nav-link active block px-3 py-2 rounded-md text-base font-medium" data-en="Home" data-kh="ទំព័រដើម">Home</a>
+                <a href="#categories" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium" data-en="Categories" data-kh="ប្រភេទ">Categories</a>
+                <a href="#shop" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium" data-en="Shop" data-kh="ហាង">Shop</a>
+                <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium" data-en="About" data-kh="អំពីយើង">About</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium" data-en="Contact" data-kh="ទំនាក់ទំនង">Contact</a>
+                <a href="#cart-modal" id="cart-icon-mobile" class="mobile-nav-link relative block px-3 py-2 rounded-md text-base font-medium">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count-mobile" class="cart-badge hidden">0</span>
+                    <span data-en="Cart" data-kh="កន្ត្រក">Cart</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-bg h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white relative">
+        <div class="absolute inset-0 bg-black opacity-40 rounded-none"></div>
+        <div class="relative z-10 p-6 reveal-on-scroll">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg" data-en="Find Your Perfect Green Companion" data-kh="ស្វែងរកដៃគូពណ៌បៃតងដ៏ល្អឥតខ្ចោះរបស់អ្នក">Find Your Perfect Green Companion</h1>
+            <p class="text-lg md:text-xl mb-8 drop-shadow-md" data-en="Bring nature into your home with our beautiful collection of plants." data-kh="នាំយកធម្មជាតិចូលក្នុងផ្ទះរបស់អ្នកជាមួយនឹងការប្រមូលរុក្ខជាតិដ៏ស្រស់ស្អាតរបស់យើង។">Bring nature into your home with our beautiful collection of plants.</p>
+            <a href="#shop" class="bg-theme-accent hover:bg-theme-accent-hover text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg hover:shadow-xl transition-all duration-300 btn-animated">
+                <span data-en="Shop Now" data-kh="ទិញឥឡូវនេះ">Shop Now</span> <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="categories" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center section-title mb-4 reveal-on-scroll" data-en="Shop by Category" data-kh="ទិញតាមប្រភេទ">Shop by Category</h2>
+            <div class="flex justify-center mb-8">
+                <input type="search" id="search-input" placeholder="Search plants..." class="w-full max-w-lg p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-theme-accent">
+            </div>
+            <div id="category-buttons" class="flex flex-wrap justify-center gap-2 mb-10">
+                <button class="category-btn py-2 px-4 rounded-full text-sm font-medium border border-theme-accent hover:bg-theme-accent hover:text-white transition-colors active" data-category="all" data-en="All" data-kh="ទាំងអស់">All</button>
+                <button class="category-btn py-2 px-4 rounded-full text-sm font-medium border border-theme-accent hover:bg-theme-accent hover:text-white transition-colors" data-category="indoor" data-en="Indoor" data-kh="ក្នុងផ្ទះ">Indoor</button>
+                <button class="category-btn py-2 px-4 rounded-full text-sm font-medium border border-theme-accent hover:bg-theme-accent hover:text-white transition-colors" data-category="outdoor" data-en="Outdoor" data-kh="ក្រៅផ្ទះ">Outdoor</button>
+                <button class="category-btn py-2 px-4 rounded-full text-sm font-medium border border-theme-accent hover:bg-theme-accent hover:text-white transition-colors" data-category="succulents" data-en="Succulents" data-kh="ទឹកដម">Succulents</button>
+                <button class="category-btn py-2 px-4 rounded-full text-sm font-medium border border-theme-accent hover:bg-theme-accent hover:text-white transition-colors" data-category="herbs" data-en="Herbs" data-kh="ឱសថ">Herbs</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="py-16 bg-secondary">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center section-title mb-12 reveal-on-scroll" data-en="Our Plants" data-kh="រុក្ខជាតិរបស់យើង">Our Plants</h2>
+            <p id="no-results-message" class="text-center section-subtitle hidden" data-en="No plants found matching your criteria." data-kh="រកមិនឃើញរុក្ខជាតិដែលត្រូវនឹងលក្ខខណ្ឌរបស់អ្នកទេ។">No plants found matching your criteria.</p>
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="product-card rounded-xl shadow-lg overflow-hidden reveal-on-scroll relative" data-category="indoor" data-name="Monstera Deliciosa" data-description="Iconic split leaves, easy to care for.">
+                    <button class="favorite-btn absolute top-2 right-2 text-red-500 hover:text-red-600 text-xl z-10" title="Add to Favorites">
+                        <i class="far fa-heart"></i> </button>
+                    <img src="https://placehold.co/400x300/A3E6CB/1C4532?text=Monstera" alt="Monstera Plant" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold section-title mb-2" data-en="Monstera Deliciosa" data-kh="ម៉ុនស្ដេរ៉ា">Monstera Deliciosa</h3>
+                        <p class="section-subtitle mb-3 text-sm" data-en="Iconic split leaves, easy to care for." data-kh="ស្លឹកបំបែក象徴, ងាយស្រួលថែទាំ។">Iconic split leaves, easy to care for.</p>
+                        <p class="text-2xl font-bold text-theme-accent mb-2" data-price="25.00">$25.00</p>
+                        <button class="quick-view-btn w-full mb-2 mt-2 text-sm text-center py-1 px-3 rounded-md border transition-colors" data-product-id="1">
+                            <span data-en="Quick View" data-kh="មើលរហ័ស">Quick View</span>
+                        </button>
+                        <button class="add-to-cart-btn w-full bg-theme-accent hover:bg-theme-accent-hover text-white font-medium py-2 px-4 rounded-lg flex items-center justify-center btn-animated"
+                                data-product-id="1" data-product-name="Monstera Deliciosa" data-product-price="25.00" data-product-image="https://placehold.co/100x100/A3E6CB/1C4532?text=Monstera">
+                            <i class="fas fa-cart-plus mr-2"></i> <span data-en="Add to Cart" data-kh="បន្ថែមទៅកន្ត្រក">Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card rounded-xl shadow-lg overflow-hidden reveal-on-scroll relative" style="transition-delay: 0.1s;" data-category="indoor" data-name="Snake Plant" data-description="Air-purifying and very resilient.">
+                     <button class="favorite-btn absolute top-2 right-2 text-red-500 hover:text-red-600 text-xl z-10" title="Add to Favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <img src="https://placehold.co/400x300/C1F0D0/2A5B46?text=Snake+Plant" alt="Snake Plant" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold section-title mb-2" data-en="Snake Plant" data-kh="រុក្ខជាតិពស់">Snake Plant</h3>
+                        <p class="section-subtitle mb-3 text-sm" data-en="Air-purifying and very resilient." data-kh="បន្សុទ្ធខ្យល់ និងធន់ណាស់។">Air-purifying and very resilient.</p>
+                        <p class="text-2xl font-bold text-theme-accent mb-2" data-price="18.00">$18.00</p>
+                        <button class="quick-view-btn w-full mb-2 mt-2 text-sm text-center py-1 px-3 rounded-md border transition-colors" data-product-id="2">
+                           <span data-en="Quick View" data-kh="មើលរហ័ស">Quick View</span>
+                        </button>
+                        <button class="add-to-cart-btn w-full bg-theme-accent hover:bg-theme-accent-hover text-white font-medium py-2 px-4 rounded-lg flex items-center justify-center btn-animated"
+                                data-product-id="2" data-product-name="Snake Plant" data-product-price="18.00" data-product-image="https://placehold.co/100x100/C1F0D0/2A5B46?text=Snake">
+                            <i class="fas fa-cart-plus mr-2"></i> <span data-en="Add to Cart" data-kh="បន្ថែមទៅកន្ត្រក">Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card rounded-xl shadow-lg overflow-hidden reveal-on-scroll relative" style="transition-delay: 0.2s;" data-category="outdoor" data-name="Fiddle Leaf Fig" data-description="Trendy statement plant with large leaves.">
+                    <button class="favorite-btn absolute top-2 right-2 text-red-500 hover:text-red-600 text-xl z-10" title="Add to Favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <img src="https://placehold.co/400x300/82D8B4/153D2B?text=Fiddle+Leaf" alt="Fiddle Leaf Fig" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold section-title mb-2" data-en="Fiddle Leaf Fig" data-kh="ដើមឧទុម្ពរ">Fiddle Leaf Fig</h3>
+                        <p class="section-subtitle mb-3 text-sm" data-en="Trendy statement plant with large leaves." data-kh="រុក្ខជាតិទាន់សម័យ ស្លឹកធំ។">Trendy statement plant with large leaves.</p>
+                        <p class="text-2xl font-bold text-theme-accent mb-2" data-price="45.00">$45.00</p>
+                        <button class="quick-view-btn w-full mb-2 mt-2 text-sm text-center py-1 px-3 rounded-md border transition-colors" data-product-id="3">
+                            <span data-en="Quick View" data-kh="មើលរហ័ស">Quick View</span>
+                        </button>
+                        <button class="add-to-cart-btn w-full bg-theme-accent hover:bg-theme-accent-hover text-white font-medium py-2 px-4 rounded-lg flex items-center justify-center btn-animated"
+                                data-product-id="3" data-product-name="Fiddle Leaf Fig" data-product-price="45.00" data-product-image="https://placehold.co/100x100/82D8B4/153D2B?text=Fiddle">
+                            <i class="fas fa-cart-plus mr-2"></i> <span data-en="Add to Cart" data-kh="បន្ថែមទៅកន្ត្រក">Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card rounded-xl shadow-lg overflow-hidden reveal-on-scroll relative" style="transition-delay: 0.3s;" data-category="succulents" data-name="Golden Pothos" data-description="Trailing vine, perfect for beginners.">
+                    <button class="favorite-btn absolute top-2 right-2 text-red-500 hover:text-red-600 text-xl z-10" title="Add to Favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <img src="https://placehold.co/400x300/B0E8C8/214F3A?text=Pothos" alt="Pothos Plant" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold section-title mb-2" data-en="Golden Pothos" data-kh="พลูด่างทอง">Golden Pothos</h3>
+                        <p class="section-subtitle mb-3 text-sm" data-en="Trailing vine, perfect for beginners." data-kh="វល្លិ៍เลื้อย เหมาะสำหรับผู้เริ่มต้น។">Trailing vine, perfect for beginners.</p>
+                        <p class="text-2xl font-bold text-theme-accent mb-2" data-price="15.00">$15.00</p>
+                        <button class="quick-view-btn w-full mb-2 mt-2 text-sm text-center py-1 px-3 rounded-md border transition-colors" data-product-id="4">
+                            <span data-en="Quick View" data-kh="មើលរហ័ស">Quick View</span>
+                        </button>
+                        <button class="add-to-cart-btn w-full bg-theme-accent hover:bg-theme-accent-hover text-white font-medium py-2 px-4 rounded-lg flex items-center justify-center btn-animated"
+                                data-product-id="4" data-product-name="Golden Pothos" data-product-price="15.00" data-product-image="https://placehold.co/100x100/B0E8C8/214F3A?text=Pothos">
+                            <i class="fas fa-cart-plus mr-2"></i> <span data-en="Add to Cart" data-kh="បន្ថែមទៅកន្ត្រក">Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                 <div class="product-card rounded-xl shadow-lg overflow-hidden reveal-on-scroll relative" style="transition-delay: 0.4s;" data-category="herbs" data-name="Sweet Basil" data-description="Aromatic herb for your kitchen.">
+                    <button class="favorite-btn absolute top-2 right-2 text-red-500 hover:text-red-600 text-xl z-10" title="Add to Favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <img src="https://placehold.co/400x300/77D4A8/103A2B?text=Basil" alt="Basil Plant" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/cccccc/ffffff?text=Basil';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold section-title mb-2" data-en="Sweet Basil" data-kh="ជីរនាងវង">Sweet Basil</h3>
+                        <p class="section-subtitle mb-3 text-sm" data-en="Aromatic herb for your kitchen." data-kh="ឱសថក្រអូបសម្រាប់ផ្ទះបាយរបស់អ្នក។">Aromatic herb for your kitchen.</p>
+                        <p class="text-2xl font-bold text-theme-accent mb-2" data-price="8.00">$8.00</p>
+                         <button class="quick-view-btn w-full mb-2 mt-2 text-sm text-center py-1 px-3 rounded-md border transition-colors" data-product-id="5">
+                            <span data-en="Quick View" data-kh="មើលរហ័ស">Quick View</span>
+                        </button>
+                        <button class="add-to-cart-btn w-full bg-theme-accent hover:bg-theme-accent-hover text-white font-medium py-2 px-4 rounded-lg flex items-center justify-center btn-animated"
+                                data-product-id="5" data-product-name="Sweet Basil" data-product-price="8.00" data-product-image="https://placehold.co/100x100/77D4A8/103A2B?text=Basil">
+                            <i class="fas fa-cart-plus mr-2"></i> <span data-en="Add to Cart" data-kh="បន្ថែមទៅកន្ត្រក">Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+                 <div class="product-card rounded-xl shadow-lg overflow-hidden reveal-on-scroll relative" style="transition-delay: 0.5s;" data-category="outdoor" data-name="Red Rose Bush" data-description="Classic beauty for your garden.">
+                    <button class="favorite-btn absolute top-2 right-2 text-red-500 hover:text-red-600 text-xl z-10" title="Add to Favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <img src="https://placehold.co/400x300/5CB85C/FFFFFF?text=Rose+Bush" alt="Rose Bush" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/cccccc/ffffff?text=Rose';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold section-title mb-2" data-en="Red Rose Bush" data-kh="គុម្ពផ្កាកុលាបក្រហម">Red Rose Bush</h3>
+                        <p class="section-subtitle mb-3 text-sm" data-en="Classic beauty for your garden." data-kh="សម្រស់បុរាណសម្រាប់សួនរបស់អ្នក។">Classic beauty for your garden.</p>
+                        <p class="text-2xl font-bold text-theme-accent mb-2" data-price="30.00">$30.00</p>
+                        <button class="quick-view-btn w-full mb-2 mt-2 text-sm text-center py-1 px-3 rounded-md border transition-colors" data-product-id="6">
+                            <span data-en="Quick View" data-kh="មើលរហ័ស">Quick View</span>
+                        </button>
+                        <button class="add-to-cart-btn w-full bg-theme-accent hover:bg-theme-accent-hover text-white font-medium py-2 px-4 rounded-lg flex items-center justify-center btn-animated"
+                                data-product-id="6" data-product-name="Red Rose Bush" data-product-price="30.00" data-product-image="https://placehold.co/100x100/5CB85C/FFFFFF?text=Rose">
+                            <i class="fas fa-cart-plus mr-2"></i> <span data-en="Add to Cart" data-kh="បន្ថែមទៅកន្ត្រក">Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-card-bg"> 
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center reveal-on-scroll">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-10">
+                    <img src="https://placehold.co/600x400/A3E6CB/1C4532?text=Our+Story" alt="About PlantLover Shop" class="rounded-xl shadow-xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold section-title mb-6" data-en="About PlantLover Shop" data-kh="អំពីហាងអ្នកស្រលាញ់រុក្ខជាតិ">About PlantLover Shop</h2>
+                    <p class="section-subtitle mb-4 leading-relaxed" data-en="Welcome to PlantLover Shop, your sanctuary for all things green! We believe that plants have the power to transform spaces, uplift spirits, and connect us with nature. Our mission is to provide high-quality, healthy plants and the knowledge you need to help them thrive." data-kh="សូមស្វាគមន៍មកកាន់ហាងអ្នកស្រលាញ់រុក្ខជាតិ ទីសក្ការៈរបស់អ្នកសម្រាប់អ្វីៗទាំងអស់ពណ៌បៃតង! យើងជឿជាក់ថារុក្ខជាតិមានអំណាចក្នុងការផ្លាស់ប្តូរទីធ្លា លើកកំពស់ស្មារតី និងភ្ជាប់យើងជាមួយធម្មជាតិ។ បេសកកម្មរបស់យើងគឺផ្តល់ជូនរុក្ខជាតិដែលមានគុណភាពខ្ពស់ មានសុខភាពល្អ និងចំណេះដឹងដែលអ្នកត្រូវការដើម្បីជួយឱ្យពួកវារីកចម្រើន។">
+                        Welcome to PlantLover Shop, your sanctuary for all things green! We believe that plants have the power to transform spaces, uplift spirits, and connect us with nature. Our mission is to provide high-quality, healthy plants and the knowledge you need to help them thrive.
+                    </p>
+                    <p class="section-subtitle mb-4 leading-relaxed" data-en="Founded by a group of passionate plant enthusiasts, we carefully curate our collection to bring you a diverse range of indoor and outdoor plants, from easy-care beginners to rare collector's items." data-kh="បង្កើតឡើងដោយក្រុមអ្នកស្រលាញ់រុក្ខជាតិយ៉ាងក្លៀវក្លា យើងរៀបចំការប្រមូលរបស់យើងដោយប្រុងប្រយ័ត្ន ដើម្បីនាំមកជូនអ្នកនូវរុក្ខជាតិក្នុងផ្ទះ និងក្រៅផ្ទះជាច្រើនប្រភេទ ចាប់ពីរុក្ខជាតិងាយថែទាំសម្រាប់អ្នកចាប់ផ្តើមដំបូង រហូតដល់របស់កម្រសម្រាប់អ្នកสะสม។">
+                        Founded by a group of passionate plant enthusiasts, we carefully curate our collection to bring you a diverse range of indoor and outdoor plants, from easy-care beginners to rare collector's items.
+                    </p>
+                    <a href="#" class="text-theme-accent hover:text-theme-accent-hover font-semibold group btn-animated">
+                        <span data-en="Learn More" data-kh="ស្វែងយល់បន្ថែម">Learn More</span> <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-secondary">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center section-title mb-12 reveal-on-scroll" data-en="Why Choose Us?" data-kh="ហេតុអ្វីជ្រើសរើសយើង?">Why Choose Us?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-card-bg rounded-xl shadow-lg reveal-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="text-theme-accent mb-4">
+                        <i class="fas fa-seedling fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold section-title mb-2" data-en="Healthy Plants" data-kh="រុក្ខជាតិមានសុខភាពល្អ">Healthy Plants</h3>
+                    <p class="section-subtitle text-sm" data-en="We guarantee healthy, well-cared-for plants, ready for their new home." data-kh="យើងធានារុក្ខជាតិដែលមានសុខភាពល្អ ថែទាំបានល្អ ត្រៀមខ្លួនសម្រាប់ផ្ទះថ្មីរបស់ពួកគេ។">We guarantee healthy, well-cared-for plants, ready for their new home.</p>
+                </div>
+                <div class="p-6 bg-card-bg rounded-xl shadow-lg reveal-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="text-theme-accent mb-4">
+                        <i class="fas fa-shipping-fast fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold section-title mb-2" data-en="Fast Shipping" data-kh="ដឹកជញ្ជូនលឿន">Fast Shipping</h3>
+                    <p class="section-subtitle text-sm" data-en="Carefully packaged and quickly shipped to your doorstep." data-kh="វេចខ្ចប់ដោយប្រុងប្រយ័ត្ន និងដឹកជញ្ជូនយ៉ាងលឿនដល់មាត់ទ្វាររបស់អ្នក។">Carefully packaged and quickly shipped to your doorstep.</p>
+                </div>
+                <div class="p-6 bg-card-bg rounded-xl shadow-lg reveal-on-scroll" style="transition-delay: 0.3s;">
+                    <div class="text-theme-accent mb-4">
+                        <i class="fas fa-headset fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold section-title mb-2" data-en="Expert Support" data-kh="ការគាំទ្រជំនាញ">Expert Support</h3>
+                    <p class="section-subtitle text-sm" data-en="Our plant experts are here to help you with any questions." data-kh="អ្នកជំនាញរុក្ខជាតិរបស់យើងនៅទីនេះដើម្បីជួយអ្នកជាមួយនឹងសំណួរណាមួយ។">Our plant experts are here to help you with any questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-theme-accent text-white">
+        <div class="container mx-auto px-4 text-center reveal-on-scroll">
+            <h2 class="text-3xl font-bold mb-6" data-en="Get in Touch" data-kh="ទំនាក់ទំនងមកពួកយើង">Get in Touch</h2>
+            <p class="text-green-100 mb-8 max-w-2xl mx-auto" data-en="Have questions about our plants or need some advice? We'd love to hear from you!" data-kh="មានសំណួរអំពីរុក្ខជាតិរបស់យើង ឬត្រូវការដំបូន្មានខ្លះ? យើងចង់ឮពីអ្នក!">
+                Have questions about our plants or need some advice? We'd love to hear from you!
+            </p>
+            <form id="contact-form" class="max-w-xl mx-auto">
+                <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                    <input type="text" name="name" placeholder="Your Name (ឈ្មោះ)" required class="w-full p-3 rounded-lg bg-green-700 placeholder-green-300 text-white focus:ring-2 focus:ring-green-400 outline-none">
+                    <input type="email" name="email" placeholder="Your Email (អ៊ីមែល)" required class="w-full p-3 rounded-lg bg-green-700 placeholder-green-300 text-white focus:ring-2 focus:ring-green-400 outline-none">
+                </div>
+                <textarea name="message" placeholder="Your Message (សាររបស់អ្នក)" rows="4" required class="w-full p-3 rounded-lg bg-green-700 placeholder-green-300 text-white focus:ring-2 focus:ring-green-400 outline-none mb-4"></textarea>
+                <button type="submit" class="bg-white hover:bg-green-100 text-theme-accent font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 btn-animated">
+                    <span data-en="Send Message" data-kh="ផ្ញើសារ">Send Message</span>
+                </button>
+            </form>
+            <div id="form-message" class="mt-4 text-lg"></div>
+        </div>
+    </section>
+
+    <footer class="footer-custom py-12">
+        <div class="container mx-auto px-4">
+             <div class="mb-8 text-center reveal-on-scroll">
+                <label for="location-input" class="block text-sm font-medium mb-1" data-en="Set Your Location (Mock)" data-kh="កំណត់ទីតាំងរបស់អ្នក (សាកល្បង)">Set Your Location (Mock):</label>
+                <input type="text" id="location-input" placeholder="Enter city, e.g., Phnom Penh" class="p-2 rounded-md border modal-input w-full max-w-xs mx-auto">
+                <button id="set-location-btn" class="mt-2 bg-theme-accent hover:bg-theme-accent-hover text-white py-2 px-4 rounded-md btn-animated text-sm">
+                    <span data-en="Set Location" data-kh="កំណត់ទីតាំង">Set Location</span>
+                </button>
+                <p id="location-display" class="text-sm mt-2"></p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="reveal-on-scroll">
+                    <h4 class="text-lg font-semibold mb-3" data-en="PlantLover Shop" data-kh="ហាងអ្នកស្រលាញ់រុក្ខជាតិ">PlantLover Shop</h4>
+                    <p class="text-sm" data-en="Your one-stop shop for beautiful and healthy plants. Bringing nature closer to you." data-kh="ហាងតែមួយគត់របស់អ្នកសម្រាប់រុក្ខជាតិស្រស់ស្អាត និងមានសុខភាពល្អ។ នាំយកធម្មជាតិមកជិតអ្នក។">Your one-stop shop for beautiful and healthy plants. Bringing nature closer to you.</p>
+                </div>
+                <div class="reveal-on-scroll" style="transition-delay: 0.1s;">
+                    <h4 class="text-lg font-semibold mb-3" data-en="Quick Links" data-kh="តំណរហ័ស">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors" data-en="Home" data-kh="ទំព័រដើម">Home</a></li>
+                        <li><a href="#shop" class="hover:text-white transition-colors" data-en="Shop" data-kh="ហាង">Shop</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors" data-en="About Us" data-kh="អំពី​ពួក​យើង">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors" data-en="Contact" data-kh="ទំនាក់ទំនង">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors" data-en="FAQs" data-kh="សំណួរគេសួរញឹកញាប់">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="reveal-on-scroll" style="transition-delay: 0.2s;">
+                    <h4 class="text-lg font-semibold mb-3" data-en="Follow Us" data-kh="តាមដានពួកយើង">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-pinterest fa-lg"></i></a>
+                    </div>
+                    <h4 class="text-lg font-semibold mt-6 mb-3" data-en="Newsletter" data-kh="ព្រឹត្តិបត្រព័ត៌មាន">Newsletter</h4>
+                    <form id="newsletter-form" class="flex">
+                        <input type="email" name="newsletter_email" placeholder="Your email (អ៊ីមែល)" required class="w-full p-2 rounded-l-lg border text-white placeholder-green-300 focus:outline-none focus:border-theme-accent">
+                        <button type="submit" class="bg-theme-accent hover:bg-theme-accent-hover text-white p-2 rounded-r-lg font-semibold btn-animated">
+                            <span data-en="Subscribe" data-kh="ជាវ">Subscribe</span>
+                        </button>
+                    </form>
+                     <div id="newsletter-message" class="mt-2 text-sm"></div>
+                </div>
+            </div>
+            <div class="border-t border-green-700 pt-8 text-center text-sm reveal-on-scroll">
+                <p>&copy; <span id="currentYear"></span> <span data-en="PlantLover Shop. All Rights Reserved. Designed with" data-kh="ហាងអ្នកស្រលាញ់រុក្ខជាតិ. រក្សាសិទ្ធិគ្រប់យ៉ាង. រចនាដោយ">PlantLover Shop. All Rights Reserved. Designed with</span> <i class="fas fa-heart text-red-500"></i>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="fixed inset-0 modal flex items-center justify-center z-50 hidden p-4">
+        <div class="modal-content rounded-lg shadow-xl w-full max-w-lg max-h-[80vh] flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-xl font-semibold" data-en="Your Shopping Cart" data-kh="កន្ត្រកទំនិញរបស់អ្នក">Your Shopping Cart</h3>
+                <button id="close-cart-modal" class="hover:text-theme-accent">
+                    <i class="fas fa-times fa-lg"></i>
+                </button>
+            </div>
+            <div id="cart-items-container" class="p-4 overflow-y-auto flex-grow">
+                <p id="empty-cart-message" class="text-center" data-en="Your cart is empty." data-kh="កន្ត្រកទំនិញរបស់អ្នកនៅទំនេរ។">Your cart is empty.</p>
+            </div>
+            <div class="p-4 border-t">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-lg font-semibold" data-en="Total:" data-kh="សរុប៖">Total:</span>
+                    <span id="cart-total" class="text-xl font-bold text-theme-accent">$0.00</span>
+                </div>
+                <button id="checkout-btn" class="w-full bg-theme-accent hover:bg-theme-accent-hover text-white font-semibold py-3 rounded-lg transition-colors duration-300 disabled:opacity-50 btn-animated" disabled>
+                    <span data-en="Proceed to Checkout" data-kh="បន្តទៅការបង់ប្រាក់">Proceed to Checkout</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="payment-modal" class="fixed inset-0 modal flex items-center justify-center z-[51] hidden p-4">
+        <div class="modal-content rounded-lg shadow-xl w-full max-w-md">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-xl font-semibold" data-en="Payment Details" data-kh="รายละเอียดการชำระเงิน">Payment Details</h3>
+                <button id="close-payment-modal" class="hover:text-theme-accent">
+                    <i class="fas fa-times fa-lg"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-4">
+                <div>
+                    <label for="card-name" class="block text-sm font-medium mb-1" data-en="Name on Card" data-kh="ឈ្មោះនៅលើកាត">Name on Card</label>
+                    <input type="text" id="card-name" class="modal-input w-full p-2 border rounded-md" placeholder="Enter name">
+                </div>
+                <div>
+                    <label for="card-number" class="block text-sm font-medium mb-1" data-en="Card Number" data-kh="លេខកាត">Card Number</label>
+                    <input type="text" id="card-number" class="modal-input w-full p-2 border rounded-md" placeholder="0000 0000 0000 0000">
+                </div>
+                <div class="flex space-x-4">
+                    <div class="flex-1">
+                        <label for="card-expiry" class="block text-sm font-medium mb-1" data-en="Expiry Date" data-kh="ថ្ងៃ​ផុតកំណត់">Expiry Date</label>
+                        <input type="text" id="card-expiry" class="modal-input w-full p-2 border rounded-md" placeholder="MM/YY">
+                    </div>
+                    <div class="flex-1">
+                        <label for="card-cvc" class="block text-sm font-medium mb-1" data-en="CVC" data-kh="CVC">CVC</label>
+                        <input type="text" id="card-cvc" class="modal-input w-full p-2 border rounded-md" placeholder="123">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p class="my-2 section-subtitle" data-en="OR" data-kh="หรือ">OR</p>
+                    <img src="https://placehold.co/200x200/E0E0E0/333333?text=Fake+ABA+QR+Code" alt="ABA QR Code" class="mx-auto rounded-md shadow-sm" onerror="this.onerror=null;this.src='https://placehold.co/200x200/cccccc/ffffff?text=QR+Error';">
+                    <p class="text-xs section-subtitle mt-1" data-en="Scan with your ABA App (Demo)" data-kh="ស្កេនជាមួយកម្មវិធី ABA របស់អ្នក (សាកល្បង)">Scan with your ABA App (Demo)</p>
+                </div>
+            </div>
+            <div class="p-4 border-t">
+                <button id="confirm-payment-btn" class="w-full bg-theme-accent hover:bg-theme-accent-hover text-white font-semibold py-3 rounded-lg btn-animated">
+                    <span data-en="Confirm Payment" data-kh="ยืนยันการชำระเงิน">Confirm Payment</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="order-confirmation-modal" class="fixed inset-0 modal flex items-center justify-center z-[52] hidden p-4">
+        <div id="receipt-area" class="modal-content rounded-lg shadow-xl w-full max-w-md p-6 text-center">
+            <i class="fas fa-check-circle text-green-500 text-5xl mb-4"></i>
+            <h2 class="text-2xl font-semibold mb-2" data-en="Order Confirmed!" data-kh="ការបញ្ជាទិញត្រូវបានបញ្ជាក់!">Order Confirmed!</h2>
+            <p class="section-subtitle mb-4" data-en="Thank you for your purchase. Your plants are on their way!" data-kh="សូមអរគុណចំពោះការទិញរបស់អ្នក។ រុក្ខជាតិរបស់អ្នកកំពុងធ្វើដំណើរមកហើយ!">Thank you for your purchase. Your plants are on their way!</p>
+            <div id="receipt-details" class="text-left text-sm section-subtitle mb-4 border-t border-b py-2">
+                </div>
+            <p class="text-xs section-subtitle" data-en="A copy of your receipt will be (not really) emailed to you." data-kh="ច្បាប់ចម្លងនៃវិក័យប័ត្ររបស់អ្នកនឹងត្រូវបាន (មិនពិតទេ) អ៊ីមែលទៅអ្នក។">A copy of your receipt will be (not really) emailed to you.</p>
+            <div class="mt-6 space-x-2">
+                <button id="print-receipt-btn" class="bg-theme-accent hover:bg-theme-accent-hover text-white font-semibold py-2 px-4 rounded-lg btn-animated">
+                    <i class="fas fa-print mr-2"></i><span data-en="Print Receipt" data-kh="បោះពុម្ពវិក័យប័ត្រ">Print Receipt</span>
+                </button>
+                <button id="close-confirmation-modal" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-lg btn-animated">
+                    <span data-en="Close" data-kh="បិទ">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="quick-view-modal" class="fixed inset-0 modal flex items-center justify-center z-[51] hidden p-4">
+        <div class="modal-content rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-xl font-semibold" data-en="Quick View" data-kh="មើលរហ័ស">Quick View</h3>
+                <button id="close-quick-view-modal" class="hover:text-theme-accent">
+                    <i class="fas fa-times fa-lg"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/2">
+                        <img id="quick-view-image" src="https://placehold.co/400x400/cccccc/ffffff?text=Plant" alt="Plant Image" class="w-full h-auto object-cover rounded-lg shadow-md">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 id="quick-view-name" class="text-3xl font-bold section-title mb-3">Product Name</h2>
+                        <p id="quick-view-price" class="text-3xl font-bold text-theme-accent mb-4">$0.00</p>
+                        <p id="quick-view-description" class="section-subtitle mb-6 text-sm leading-relaxed">Full product description goes here...</p>
+                        <button id="quick-view-add-to-cart-btn" class="w-full bg-theme-accent hover:bg-theme-accent-hover text-white font-semibold py-3 px-6 rounded-lg btn-animated flex items-center justify-center">
+                            <i class="fas fa-cart-plus mr-2"></i> <span data-en="Add to Cart" data-kh="បន្ថែមទៅកន្ត្រក">Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="toast-notification" class="fixed bottom-5 right-5 bg-theme-accent text-white py-3 px-5 rounded-lg shadow-md hidden">
+        <p id="toast-message"></p>
+    </div>
+
+    <section class="py-16 bg-card-bg text-center" id="reviews">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold section-title mb-6" data-en="Customer Reviews" data-kh="មតិរបស់អតិថិជន">Customer Reviews</h2>
+            <p class="section-subtitle mb-4" data-en="Share your experience with our plants!" data-kh="ចែករំលែកបទពិសោធន៍របស់អ្នកជាមួយរុក្ខជាតិរបស់យើង!">Share your experience with our plants!</p>
+            <form class="max-w-xl mx-auto text-left bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <label class="block mb-2 text-sm font-medium" data-en="Your Name" data-kh="ឈ្មោះរបស់អ្នក">Your Name</label>
+                <input class="w-full p-3 mb-4 rounded border modal-input" placeholder="John Doe" type="text"/>
+                <label class="block mb-2 text-sm font-medium" data-en="Your Review" data-kh="មតិរបស់អ្នក">Your Review</label>
+                <textarea class="w-full p-3 mb-4 rounded border modal-input" placeholder="I love this plant..." rows="4"></textarea>
+                <label class="block mb-2 text-sm font-medium" data-en="Rating" data-kh="ការវាយតម្លៃ">Rating</label>
+                <select class="w-full p-3 mb-4 rounded border modal-input">
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="1">⭐</option>
+                </select>
+                <button class="w-full bg-theme-accent hover:bg-theme-accent-hover text-white font-semibold py-3 rounded-lg btn-animated" type="submit">
+                    <span data-en="Submit Review" data-kh="ដាក់ស្នើមតិ">Submit Review</span>
+                </button>
+            </form>
+        </div>
+    </section>
+    
+    <div class="fixed inset-0 modal flex items-center justify-center z-[60] hidden p-4" id="auth-modal">
+        <div class="modal-content rounded-lg shadow-xl w-full max-w-sm">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-xl font-semibold" data-en="Login / Register" data-kh="ចូល / ចុះឈ្មោះ">Login / Register</h3>
+                <button class="hover:text-theme-accent" onclick="document.getElementById('auth-modal').classList.add('hidden');">
+                    <i class="fas fa-times fa-lg"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <input class="w-full mb-3 p-2 rounded border modal-input" placeholder="Username" type="text"/>
+                <input class="w-full mb-3 p-2 rounded border modal-input" placeholder="Password" type="password"/>
+                <button class="w-full bg-theme-accent hover:bg-theme-accent-hover text-white font-semibold py-2 rounded-lg btn-animated">
+                    <span data-en="Submit" data-kh="បញ្ជូន">Submit</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

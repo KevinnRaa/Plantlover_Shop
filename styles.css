@@ -1,0 +1,294 @@
+
+        :root {
+            --bg-primary: #F9FAFB; 
+            --bg-secondary: #FFFFFF; 
+            --text-primary: #1F2937; 
+            --text-secondary: #4B5563; 
+            --accent-color: #10B981; 
+            --accent-hover: #059669; 
+            --card-bg: #F3F4F6; 
+            --header-bg: #FFFFFF;
+            --footer-bg: #047857; 
+            --footer-text: #A7F3D0; 
+            --modal-border: #D1D5DB; 
+        }
+
+        html.dark {
+            --bg-primary: #1F2937; 
+            --bg-secondary: #374151; 
+            --text-primary: #F3F4F6; 
+            --text-secondary: #9CA3AF; 
+            --accent-color: #34D399; 
+            --accent-hover: #10B981; 
+            --card-bg: #4B5563; 
+            --header-bg: #1F2937; 
+            --footer-bg: #064E3B; 
+            --footer-text: #A7F3D0; 
+            --modal-border: #4B5563; 
+        }
+
+        body {
+            font-family: 'Inter', 'Kantumruy Pro', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        header {
+            background-color: var(--header-bg);
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+        }
+        html.dark header {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+        }
+
+        .text-theme-accent { color: var(--accent-color); }
+        .bg-theme-accent { background-color: var(--accent-color); }
+        .hover\:bg-theme-accent-hover:hover { background-color: var(--accent-hover); }
+        .border-theme-accent { border-color: var(--accent-color); }
+        .ring-theme-accent { 
+            box-shadow: 0 0 0 2px var(--accent-color); /* For category active state using custom class */
+        }
+
+
+        .hero-bg {
+            background-image: url('https://placehold.co/1600x800/A3E6CB/1C4532?text=Welcome+to+PlantLover+Shop');
+            background-size: cover;
+            background-position: center;
+        }
+        .product-card, .category-card { /* Applied to user's category cards if they use this class */
+            background-color: var(--card-bg);
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, background-color 0.3s ease;
+            border-radius: 0.75rem; 
+            overflow: hidden; 
+        }
+        .product-card:hover, .category-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        html.dark .product-card:hover, html.dark .category-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3); 
+        }
+
+        .nav-link {
+            /* Tailwind classes are applied directly in HTML for positioning and base style */
+            color: var(--text-primary); 
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px; 
+            left: 50%;
+            background-color: var(--accent-color); 
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+            left: 0;
+        }
+        .nav-link:hover {
+             color: var(--accent-color); 
+        }
+        .nav-link.active {
+            color: var(--accent-color); 
+            font-weight: 600;
+        }
+
+        .mobile-nav-link {
+            /* Tailwind classes are applied directly in HTML */
+            color: var(--text-primary); 
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .mobile-nav-link:hover {
+            background-color: var(--card-bg); 
+            color: var(--accent-color); 
+        }
+        .mobile-nav-link.active {
+            background-color: var(--card-bg); 
+            color: var(--accent-color); 
+            font-weight: 600;
+        }
+
+        /* .cart-badge styles are applied via Tailwind classes in HTML */
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #mobile-menu {
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            background-color: var(--header-bg); 
+        }
+        #mobile-menu.open {
+            max-height: 500px; 
+            opacity: 1;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; transform: translateY(20px); }
+            10%, 90% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeInOut {
+            animation: fadeInOut 3s ease-in-out forwards;
+        }
+
+        .btn-animated {
+            /* Tailwind classes for transition are applied directly in HTML */
+            transition-property: all; 
+        }
+        /* .btn-animated:hover styles are applied via Tailwind hover states in HTML */
+        
+        .modal {
+            background-color: rgba(0,0,0,0.75); 
+        }
+        .modal-content {
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            border-radius: 0.5rem; 
+        }
+        .modal-input {
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--modal-border); 
+        }
+        .modal-input::placeholder {
+            color: var(--text-secondary);
+        }
+        .modal-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px var(--accent-color); 
+        }
+
+        .theme-toggle-btn, .lang-toggle-btn {
+            /* Tailwind classes for padding, rounded, focus are applied directly */
+            color: var(--text-secondary);
+            border: 1px solid transparent; 
+        }
+        .theme-toggle-btn:hover, .lang-toggle-btn:hover {
+            color: var(--accent-color);
+            background-color: var(--card-bg); 
+        }
+        
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #receipt-area, #receipt-area * {
+                visibility: visible;
+            }
+            #receipt-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                padding: 20px;
+                font-family: Arial, sans-serif; 
+                color: black !important; 
+                background-color: white !important; 
+            }
+            #receipt-area h2, #receipt-area h3, #receipt-area p, #receipt-area div, #receipt-area span, #receipt-area table, #receipt-area th, #receipt-area td {
+                color: black !important;
+            }
+            #receipt-area button { display: none; } 
+        }
+
+        .section-title {
+            color: var(--text-primary);
+        }
+        .section-subtitle {
+            color: var(--text-secondary);
+        }
+        .footer-custom {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+        }
+        .footer-custom a {
+            color: var(--footer-text);
+            transition: color 0.3s ease;
+        }
+        .footer-custom a:hover {
+            color: white;
+        }
+        .footer-custom h4 {
+            color: white; 
+        }
+        .footer-custom input[type="email"] { 
+             background-color: var(--footer-bg); 
+             border: 1px solid var(--accent-color); 
+             color: var(--footer-text); 
+        }
+        html.dark .footer-custom input[type="email"] {
+            background-color: #065f46; 
+            color: var(--footer-text);
+        }
+        .footer-custom input[type="email"]::placeholder {
+            color: var(--footer-text);
+            opacity: 0.7;
+        }
+        html.dark .footer-custom input[type="email"]::placeholder {
+             color: var(--footer-text);
+             opacity: 0.7;
+        }
+
+        #cart-items-container .border-b {
+            border-color: var(--modal-border);
+        }
+        #cart-modal .border-b, #cart-modal .border-t,
+        #payment-modal .border-b, #payment-modal .border-t,
+        #order-confirmation-modal .border-b, #order-confirmation-modal .border-t,
+        #quick-view-modal .border-b, #quick-view-modal .border-t {
+            border-color: var(--modal-border);
+        }
+        
+        .quick-view-btn {
+            /* Tailwind classes are applied directly in HTML */
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        .quick-view-btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        html.dark .quick-view-btn:hover {
+            color: var(--bg-secondary); 
+        }
+
+        #search-input {
+            /* Tailwind classes are applied directly in HTML */
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--modal-border);
+        }
+        #search-input::placeholder {
+            color: var(--text-secondary);
+        }
+        #search-input:focus {
+            /* Tailwind focus classes are applied directly in HTML */
+            outline: none; /* Redundant if using Tailwind focus rings */
+            border-color: var(--accent-color); /* Redundant if using Tailwind focus rings */
+        }
+        /* Ensuring category buttons active state is styled correctly */
+        .category-btn.active {
+            background-color: var(--accent-color);
+            color: white; /* Or var(--bg-secondary) for dark mode if needed */
+            border-color: var(--accent-color);
+        }
+        html.dark .category-btn.active {
+             color: var(--header-bg); /* Example: dark text on light green for dark mode active */
+        }
+    
